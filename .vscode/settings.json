@@ -1,0 +1,68 @@
+{
+  "npm.packageManager": "pnpm",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never", // Imports are organize by eslint
+    "source.sortImports": "never", // Imports are sorted by eslint
+    "source.fixAll.eslint": "always"
+  },
+  // Typescript
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.validate.enable": true, // Unlike javascript, we still need typescript validator as its not covered by eslint
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsserver.nodePath": "node", // Run typescript via our local node instead of vscode's node
+  // Eslint
+  "eslint.useFlatConfig": true,
+  // Disable vscode default validator
+  "javascript.validate.enable": false,
+  "json.validate.enable": false,
+  // Use eslint to validate instead
+  "eslint.validate": ["javascript", "typescript", "json", "jsonc", "json5"],
+  // Use only eslint to format (because its included prettier rules)
+  // Disable vscode default formatter
+  "json.format.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "eslint.format.enable": true,
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json5]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.rules.customizations": [
+    {
+      "rule": "prettier/prettier",
+      "severity": "off" // Silent the stylistic rules in you IDE, but still auto fix them
+    },
+    {
+      "rule": "simple-import-sort/imports",
+      "severity": "off" // Silent the stylistic rules in you IDE, but still auto fix them
+    }
+  ],
+  "eslint.runtime": "node", // Run eslint via our local node instead of vscode's node
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true,
+    "venv": true,
+    "*.sublime-*": true,
+    "env*": true,
+    "**/routeTree.gen.ts": true
+  },
+  "cSpell.words": ["Numberish"]
+}
